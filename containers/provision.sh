@@ -1,6 +1,7 @@
 #!/bin/bash
 
 dnf install -y bind-utils wget nmap-ncat
+
 ERR_FILE_WATCH_TIMEOUT=6 
 set -x
 if [ -f /opt/azure/containers/provision.complete ]; then
@@ -361,6 +362,10 @@ else
 fi
 
 echo "Custom script finished. API server connection check code:" $VALIDATION_ERR
+swapoff -a
+sysctl vm.overcommit_memory=1
+sysctl kernel.panic=10
+sysctl -p
 echo $(date),$(hostname), endcustomscript>>/opt/m
 mkdir -p /opt/azure/containers && touch /opt/azure/containers/provision.complete
 
