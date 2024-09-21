@@ -13,6 +13,7 @@
 
 # Shell options - remove non-matching globs, don't care about case, and use
 # extended pattern matching
+set -x
 shopt -s nullglob nocaseglob extglob
 
 # Fetch configuration from IMDS - expected is a JSON object in the aks-log-collector tag

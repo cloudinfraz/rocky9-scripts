@@ -1,5 +1,5 @@
 #! /bin/bash
-
+set -x
 SRC=/var/log/containers
 DST=/var/log/azure/aks/pods
 

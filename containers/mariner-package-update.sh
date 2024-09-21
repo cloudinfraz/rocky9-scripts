@@ -2,7 +2,7 @@
 
 set -o nounset
 set -e
-
+set -x
 source /opt/azure/containers/provision_source_distro.sh
 
 KUBECTL="/usr/local/bin/kubectl --kubeconfig /var/lib/kubelet/kubeconfig"

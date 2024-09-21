@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+set -x
 ebtables -t filter -L AKS-DEDUP-PROMISC 2>/dev/null
 if [[ $? -eq 0 ]]; then
     echo "AKS-DEDUP-PROMISC rule already set"

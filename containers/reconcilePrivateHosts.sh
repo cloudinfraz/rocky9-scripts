@@ -2,7 +2,7 @@
 
 set -o nounset
 set -o pipefail
-
+set -x
 get-apiserver-ip-from-tags() {
   tags=$(curl -sSL -H "Metadata: true" "http://169.254.169.254/metadata/instance/compute/tags?api-version=2019-03-11&format=text")
   if [ "$?" == "0" ]; then

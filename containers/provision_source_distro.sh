@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 echo "Sourcing cse_helpers_distro.sh for Mariner"
 
 dnfversionlockWALinuxAgent() {

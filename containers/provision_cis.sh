@@ -1,5 +1,6 @@
 #!/bin/bash
 # This gets us the error codes we use and the os and such.
+set -x
 source /home/packer/provision_source.sh
 
 assignRootPW() {

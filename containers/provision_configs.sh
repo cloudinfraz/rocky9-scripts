@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 NODE_INDEX=$(hostname | tail -c 2)
 NODE_NAME=$(hostname)
 

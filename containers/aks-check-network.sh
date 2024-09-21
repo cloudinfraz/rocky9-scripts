@@ -5,7 +5,7 @@
 # This script is used to check network connectivity from the node to certain required AKS endpoints 
 # and log the results to the events directory. For now, this script has to be triggered manually to
 # collect the log. In the future, we will run it periodically to check and alert any issue.
-
+set -x
 CUSTOM_ENDPOINT=${1:-''}
 
 EVENTS_LOGGING_PATH="/var/log/azure/Microsoft.Azure.Extensions.CustomScript/events/"
