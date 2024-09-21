@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dnf install -y bind-utils wget
+dnf install -y bind-utils wget nmap-ncat
 ERR_FILE_WATCH_TIMEOUT=6 
 set -x
 if [ -f /opt/azure/containers/provision.complete ]; then
