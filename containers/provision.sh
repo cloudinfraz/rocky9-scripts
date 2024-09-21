@@ -1,4 +1,6 @@
 #!/bin/bash
+
+dnf install -y bind-utils wget
 ERR_FILE_WATCH_TIMEOUT=6 
 set -x
 if [ -f /opt/azure/containers/provision.complete ]; then
