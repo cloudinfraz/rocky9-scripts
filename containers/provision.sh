@@ -130,6 +130,9 @@ if [ "${NEEDS_CONTAINERD}" == "true" ] && [ "${TELEPORT_ENABLED}" == "true" ]; t
     logs_to_events "AKS.CSE.installTeleportdPlugin" installTeleportdPlugin
 fi
 
+downloadCrictl
+installCrictl
+
 setupCNIDirs
 
 logs_to_events "AKS.CSE.installNetworkPlugin" installNetworkPlugin
