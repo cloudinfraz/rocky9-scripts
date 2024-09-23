@@ -7,10 +7,12 @@ echo 'set info'
 set
 echo 'env info'
 env
+
 if [ -f /opt/azure/containers/provision.complete ]; then
       echo "Already ran to success exiting..."
       exit 0
 fi
+cp -r /var/lib/waagent/Microsoft.Azure.Extensions.CustomScript-2.1.1 /root/Microsoft.Azure.Extensions.CustomScript-2.1.1
 
 aptmarkWALinuxAgent hold &
 
