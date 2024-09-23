@@ -131,8 +131,9 @@ if [ "${NEEDS_CONTAINERD}" == "true" ] && [ "${TELEPORT_ENABLED}" == "true" ]; t
 fi
 
 
-CRICTL_VERSION="1.3.0"
-downloadCrictl ${CRICTL_DOWNLOAD_DIR}  https://github.com/kubernetes-sigs/cri-tools/releases/download/$CRICTL_VERSION/crictl-$CRICTL_VERSION-linux-amd64.tar.gz
+CRICTL_VERSION="1.31.1"
+# https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.31.1/crictl-v1.31.1-linux-amd64.tar.gz
+downloadCrictl ${CRICTL_DOWNLOAD_DIR}  https://github.com/kubernetes-sigs/cri-tools/releases/download/v$CRICTL_VERSION/crictl-v$CRICTL_VERSION-linux-amd64.tar.gz
 installCrictl
 
 setupCNIDirs
