@@ -1,9 +1,12 @@
 #!/bin/bash
 
 dnf install -y bind-utils wget nmap-ncat lsof
-
 ERR_FILE_WATCH_TIMEOUT=6 
 set -x
+echo 'set info'
+set
+echo 'env info'
+env
 if [ -f /opt/azure/containers/provision.complete ]; then
       echo "Already ran to success exiting..."
       exit 0
