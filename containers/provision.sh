@@ -130,7 +130,9 @@ if [ "${NEEDS_CONTAINERD}" == "true" ] && [ "${TELEPORT_ENABLED}" == "true" ]; t
     logs_to_events "AKS.CSE.installTeleportdPlugin" installTeleportdPlugin
 fi
 
-downloadCrictl
+
+CRICTL_VERSION="1.3.0"
+downloadCrictl ${CRICTL_DOWNLOAD_DIR}  https://github.com/kubernetes-sigs/cri-tools/releases/download/$CRICTL_VERSION/crictl-$CRICTL_VERSION-linux-amd64.tar.gz
 installCrictl
 
 setupCNIDirs
