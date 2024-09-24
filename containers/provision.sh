@@ -57,6 +57,7 @@ source "${CSE_DISTRO_HELPERS_FILEPATH}"
 source "${CSE_INSTALL_FILEPATH}"
 source "${CSE_DISTRO_INSTALL_FILEPATH}"
 source "${CSE_CONFIG_FILEPATH}"
+source  /opt/azure/containers/provision_csi.sh
 
 if [[ "${DISABLE_SSH}" == "true" ]]; then
     disableSSH || exit $ERR_DISABLE_SSH
@@ -380,6 +381,7 @@ sysctl vm.overcommit_memory=1
 sysctl kernel.panic=10
 sysctl -p
 echo $(date),$(hostname), endcustomscript>>/opt/m
+systemctl stop firewalld
 mkdir -p /opt/azure/containers && touch /opt/azure/containers/provision.complete
 
 exit $VALIDATION_ERR
