@@ -274,17 +274,18 @@ version_gte() {
 
 systemctlEnableAndStart() {
      # 如果服务是 kubelet，先检查并修改配置文件
-    if [ "$1" = "kubelet" ]; then
+    if [ "$1" == "kubelet" ]; then
         CONFIG_FILE="/etc/systemd/system/kubelet.service"
         LINE_TO_COMMENT="ExecStartPre=/bin/bash /opt/azure/containers/ensure_imds_restriction.sh"
 
-        if grep -q "$LINE_TO_COMMENT" "$CONFIG_FILE"; then
+        if grep -q "^$LINE_TO_COMMENT" "$CONFIG_FILE"; then
             echo "注释掉 $LINE_TO_COMMENT 在 $CONFIG_FILE 中"
-            sed -i "s|^$LINE_TO_COMMENT|# $LINE_TO_COMMENT|" "$CONFIG_FILE"
-            systemctl daemon-reload  # 重新加载 systemd 配置
+            sed -i "s|^$LINE_TO_COMMENT|#&|" "$CONFIG_FILE"
+            systemctl daemon-reload
         fi
     fi
-    
+
+
     systemctl_restart 100 5 30 $1
     RESTART_STATUS=$?
     systemctl status $1 --no-pager -l > /var/log/azure/$1-status.log
