@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dnf install -y bind-utils wget nmap-ncat lsof
+dnf install -y bind-utils wget nmap-ncat lsof blobfuse2 fuse3-libs.x86_64
 ERR_FILE_WATCH_TIMEOUT=6 
 set -x
 echo 'set info'
