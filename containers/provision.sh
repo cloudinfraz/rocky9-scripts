@@ -12,9 +12,8 @@ if [ -f /opt/azure/containers/provision.complete ]; then
       echo "Already ran to success exiting..."
       exit 0
 fi
-cp -r /var/lib/waagent/Microsoft.Azure.Extensions.CustomScript-2.1.1 /root/Microsoft.Azure.Extensions.CustomScript-2.1.1
-
-cp -r /var/lib/waagent/Microsoft.AKS.Compute.AKS.Linux.AKSNode-1.154  /root/Microsoft.AKS.Compute.AKS.Linux.AKSNode-1.154
+#cp -r /var/lib/waagent/Microsoft.Azure.Extensions.CustomScript-2.1.1 /root/Microsoft.Azure.Extensions.CustomScript-2.1.1
+#cp -r /var/lib/waagent/Microsoft.AKS.Compute.AKS.Linux.AKSNode-1.154  /root/Microsoft.AKS.Compute.AKS.Linux.AKSNode-1.154
 
 aptmarkWALinuxAgent hold &
 
